@@ -229,4 +229,17 @@ return [
 
     ],
 
+    /*设置访问频率*/
+    'rate_limits' => [
+        //访问频率限制,次数/分钟
+        'access' => [
+            'expires' => env('RATE_LIMITS_ACCESS_EXPIRES',1),
+            'limit' => env('RATE_LIMITS_ASSESS',60)
+        ],
+        //登陆相关，次数/分钟
+        'sign' => [
+            'expires' => env('RATE_LIMITS_SIGN_EXPIRES',1),
+            'limit' => env('RATE_LIMITS_SIGN',10)
+        ]
+    ]
 ];
